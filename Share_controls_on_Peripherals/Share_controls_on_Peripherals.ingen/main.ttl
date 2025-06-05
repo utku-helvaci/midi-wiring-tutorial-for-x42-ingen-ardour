@@ -1,0 +1,1256 @@
+@prefix atom: <http://lv2plug.in/ns/ext/atom#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix ingen: <http://drobilla.net/ns/ingen#> .
+@prefix lv2: <http://lv2plug.in/ns/lv2core#> .
+@prefix midi: <http://lv2plug.in/ns/ext/midi#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix patch: <http://lv2plug.in/ns/ext/patch#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<Fluidsynth>
+	ingen:canvasX 1731.27758789 ;
+	ingen:canvasY 721.67028809 ;
+	<http://lv2plug.in/ns/ext/state#state> <Fluidsynth/state.ttl> ;
+	lv2:port <Fluidsynth/chorus> ,
+		<Fluidsynth/events_out> ,
+		<Fluidsynth/interpolation> ,
+		<Fluidsynth/master> ,
+		<Fluidsynth/midi_in> ,
+		<Fluidsynth/out_l> ,
+		<Fluidsynth/out_r> ,
+		<Fluidsynth/reverb> ;
+	lv2:prototype <http://calf.sourceforge.net/plugins/Fluidsynth> ;
+	a ingen:Block .
+
+<Fluidsynth/chorus>
+	ingen:value 1.0 ;
+	lv2:index 5 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ,
+		lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<Fluidsynth/events_out>
+	atom:bufferType atom:Sequence ;
+	atom:supports atom:Property ,
+		midi:MidiEvent ;
+	lv2:index 7 ;
+	lv2:portProperty lv2:connectionOptional ;
+	a atom:AtomPort ,
+		lv2:OutputPort .
+
+<Fluidsynth/interpolation>
+	ingen:value 2.0 ;
+	lv2:index 3 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ,
+		lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<Fluidsynth/master>
+	ingen:value 0.5 ;
+	lv2:designation <http://lv2plug.in/ns/ext/parameters#gain> ;
+	lv2:index 2 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<Fluidsynth/midi_in>
+	atom:bufferType atom:Sequence ;
+	atom:supports atom:Property ,
+		midi:MidiEvent ;
+	lv2:index 6 ;
+	lv2:portProperty lv2:connectionOptional ;
+	a atom:AtomPort ,
+		lv2:InputPort .
+
+<Fluidsynth/out_l>
+	lv2:designation <http://lv2plug.in/ns/ext/port-groups#left> ;
+	lv2:index 0 ;
+	a lv2:AudioPort ,
+		lv2:OutputPort .
+
+<Fluidsynth/out_r>
+	lv2:designation <http://lv2plug.in/ns/ext/port-groups#right> ;
+	lv2:index 1 ;
+	a lv2:AudioPort ,
+		lv2:OutputPort .
+
+<Fluidsynth/reverb>
+	ingen:value 1.0 ;
+	lv2:index 4 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ,
+		lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<L>
+	ingen:canvasX 1886.34472656 ;
+	ingen:canvasY 729.15905762 ;
+	lv2:index 6 ;
+	lv2:name "L" ;
+	lv2:symbol "L" ;
+	a lv2:AudioPort ,
+		lv2:OutputPort .
+
+<R>
+	ingen:canvasX 1884.04052734 ;
+	ingen:canvasY 776.81433105 ;
+	lv2:index 7 ;
+	lv2:name "R" ;
+	lv2:symbol "R" ;
+	a lv2:AudioPort ,
+		lv2:OutputPort .
+
+<casio>
+	ingen:canvasX 486.09811401 ;
+	ingen:canvasY 1038.68554688 ;
+	atom:bufferType atom:Sequence ;
+	atom:supports midi:MidiEvent ;
+	lv2:index 2 ;
+	lv2:name "casio" ;
+	lv2:symbol "casio" ;
+	a atom:AtomPort ,
+		lv2:InputPort .
+
+<channelmap>
+	ingen:canvasX 676.70495605 ;
+	ingen:canvasY 432.36358643 ;
+	lv2:port <channelmap/chn1> ,
+		<channelmap/chn10> ,
+		<channelmap/chn11> ,
+		<channelmap/chn12> ,
+		<channelmap/chn13> ,
+		<channelmap/chn14> ,
+		<channelmap/chn15> ,
+		<channelmap/chn16> ,
+		<channelmap/chn2> ,
+		<channelmap/chn3> ,
+		<channelmap/chn4> ,
+		<channelmap/chn5> ,
+		<channelmap/chn6> ,
+		<channelmap/chn7> ,
+		<channelmap/chn8> ,
+		<channelmap/chn9> ,
+		<channelmap/latency> ,
+		<channelmap/midiin> ,
+		<channelmap/midiout> ;
+	lv2:prototype <http://gareus.org/oss/lv2/midifilter#channelmap> ;
+	a ingen:Block .
+
+<channelmap/chn1>
+	ingen:value 5.0 ;
+	lv2:index 3 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap/chn10>
+	ingen:value 0.0 ;
+	lv2:index 12 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap/chn11>
+	ingen:value 0.0 ;
+	lv2:index 13 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap/chn12>
+	ingen:value 0.0 ;
+	lv2:index 14 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap/chn13>
+	ingen:value 0.0 ;
+	lv2:index 15 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap/chn14>
+	ingen:value 0.0 ;
+	lv2:index 16 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap/chn15>
+	ingen:value 0.0 ;
+	lv2:index 17 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap/chn16>
+	ingen:value 0.0 ;
+	lv2:index 18 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap/chn2>
+	ingen:value 0.0 ;
+	lv2:index 4 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap/chn3>
+	ingen:value 0.0 ;
+	lv2:index 5 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap/chn4>
+	ingen:value 0.0 ;
+	lv2:index 6 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap/chn5>
+	ingen:value 0.0 ;
+	lv2:index 7 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap/chn6>
+	ingen:value 0.0 ;
+	lv2:index 8 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap/chn7>
+	ingen:value 0.0 ;
+	lv2:index 9 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap/chn8>
+	ingen:value 0.0 ;
+	lv2:index 10 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap/chn9>
+	ingen:value 0.0 ;
+	lv2:index 11 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap/latency>
+	lv2:index 2 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#notOnGUI> ,
+		lv2:integer ,
+		lv2:reportsLatency ;
+	a lv2:ControlPort ,
+		lv2:OutputPort .
+
+<channelmap/midiin>
+	atom:bufferType atom:Sequence ;
+	atom:supports midi:MidiEvent ;
+	lv2:index 0 ;
+	a atom:AtomPort ,
+		lv2:InputPort .
+
+<channelmap/midiout>
+	atom:bufferType atom:Sequence ;
+	atom:supports midi:MidiEvent ;
+	lv2:index 1 ;
+	a atom:AtomPort ,
+		lv2:OutputPort .
+
+<channelmap_2>
+	ingen:canvasX 680.47888184 ;
+	ingen:canvasY 1026.13244629 ;
+	lv2:port <channelmap_2/chn1> ,
+		<channelmap_2/chn10> ,
+		<channelmap_2/chn11> ,
+		<channelmap_2/chn12> ,
+		<channelmap_2/chn13> ,
+		<channelmap_2/chn14> ,
+		<channelmap_2/chn15> ,
+		<channelmap_2/chn16> ,
+		<channelmap_2/chn2> ,
+		<channelmap_2/chn3> ,
+		<channelmap_2/chn4> ,
+		<channelmap_2/chn5> ,
+		<channelmap_2/chn6> ,
+		<channelmap_2/chn7> ,
+		<channelmap_2/chn8> ,
+		<channelmap_2/chn9> ,
+		<channelmap_2/latency> ,
+		<channelmap_2/midiin> ,
+		<channelmap_2/midiout> ;
+	lv2:prototype <http://gareus.org/oss/lv2/midifilter#channelmap> ;
+	a ingen:Block .
+
+<channelmap_2/chn1>
+	ingen:value 2.0 ;
+	lv2:index 3 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_2/chn10>
+	ingen:value 0.0 ;
+	lv2:index 12 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_2/chn11>
+	ingen:value 0.0 ;
+	lv2:index 13 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_2/chn12>
+	ingen:value 0.0 ;
+	lv2:index 14 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_2/chn13>
+	ingen:value 0.0 ;
+	lv2:index 15 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_2/chn14>
+	ingen:value 0.0 ;
+	lv2:index 16 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_2/chn15>
+	ingen:value 0.0 ;
+	lv2:index 17 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_2/chn16>
+	ingen:value 0.0 ;
+	lv2:index 18 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_2/chn2>
+	ingen:value 0.0 ;
+	lv2:index 4 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_2/chn3>
+	ingen:value 0.0 ;
+	lv2:index 5 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_2/chn4>
+	ingen:value 0.0 ;
+	lv2:index 6 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_2/chn5>
+	ingen:value 0.0 ;
+	lv2:index 7 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_2/chn6>
+	ingen:value 0.0 ;
+	lv2:index 8 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_2/chn7>
+	ingen:value 0.0 ;
+	lv2:index 9 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_2/chn8>
+	ingen:value 0.0 ;
+	lv2:index 10 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_2/chn9>
+	ingen:value 0.0 ;
+	lv2:index 11 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_2/latency>
+	lv2:index 2 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#notOnGUI> ,
+		lv2:integer ,
+		lv2:reportsLatency ;
+	a lv2:ControlPort ,
+		lv2:OutputPort .
+
+<channelmap_2/midiin>
+	atom:bufferType atom:Sequence ;
+	atom:supports midi:MidiEvent ;
+	lv2:index 0 ;
+	a atom:AtomPort ,
+		lv2:InputPort .
+
+<channelmap_2/midiout>
+	atom:bufferType atom:Sequence ;
+	atom:supports midi:MidiEvent ;
+	lv2:index 1 ;
+	a atom:AtomPort ,
+		lv2:OutputPort .
+
+<channelmap_4>
+	ingen:canvasX 1215.16174316 ;
+	ingen:canvasY 464.71252441 ;
+	lv2:port <channelmap_4/chn1> ,
+		<channelmap_4/chn10> ,
+		<channelmap_4/chn11> ,
+		<channelmap_4/chn12> ,
+		<channelmap_4/chn13> ,
+		<channelmap_4/chn14> ,
+		<channelmap_4/chn15> ,
+		<channelmap_4/chn16> ,
+		<channelmap_4/chn2> ,
+		<channelmap_4/chn3> ,
+		<channelmap_4/chn4> ,
+		<channelmap_4/chn5> ,
+		<channelmap_4/chn6> ,
+		<channelmap_4/chn7> ,
+		<channelmap_4/chn8> ,
+		<channelmap_4/chn9> ,
+		<channelmap_4/latency> ,
+		<channelmap_4/midiin> ,
+		<channelmap_4/midiout> ;
+	lv2:prototype <http://gareus.org/oss/lv2/midifilter#channelmap> ;
+	a ingen:Block .
+
+<channelmap_4/chn1>
+	ingen:value 1.0 ;
+	lv2:index 3 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_4/chn10>
+	ingen:value 1.0 ;
+	lv2:index 12 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_4/chn11>
+	ingen:value 1.0 ;
+	lv2:index 13 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_4/chn12>
+	ingen:value 1.0 ;
+	lv2:index 14 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_4/chn13>
+	ingen:value 1.0 ;
+	lv2:index 15 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_4/chn14>
+	ingen:value 1.0 ;
+	lv2:index 16 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_4/chn15>
+	ingen:value 1.0 ;
+	lv2:index 17 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_4/chn16>
+	ingen:value 1.0 ;
+	lv2:index 18 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_4/chn2>
+	ingen:value 1.0 ;
+	lv2:index 4 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_4/chn3>
+	ingen:value 1.0 ;
+	lv2:index 5 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_4/chn4>
+	ingen:value 1.0 ;
+	lv2:index 6 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_4/chn5>
+	ingen:value 1.0 ;
+	lv2:index 7 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_4/chn6>
+	ingen:value 1.0 ;
+	lv2:index 8 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_4/chn7>
+	ingen:value 1.0 ;
+	lv2:index 9 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_4/chn8>
+	ingen:value 1.0 ;
+	lv2:index 10 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_4/chn9>
+	ingen:value 1.0 ;
+	lv2:index 11 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_4/latency>
+	lv2:index 2 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#notOnGUI> ,
+		lv2:integer ,
+		lv2:reportsLatency ;
+	a lv2:ControlPort ,
+		lv2:OutputPort .
+
+<channelmap_4/midiin>
+	atom:bufferType atom:Sequence ;
+	atom:supports midi:MidiEvent ;
+	lv2:index 0 ;
+	a atom:AtomPort ,
+		lv2:InputPort .
+
+<channelmap_4/midiout>
+	atom:bufferType atom:Sequence ;
+	atom:supports midi:MidiEvent ;
+	lv2:index 1 ;
+	a atom:AtomPort ,
+		lv2:OutputPort .
+
+<channelmap_5>
+	ingen:canvasX 1207.93371582 ;
+	ingen:canvasY 1041.51635742 ;
+	lv2:port <channelmap_5/chn1> ,
+		<channelmap_5/chn10> ,
+		<channelmap_5/chn11> ,
+		<channelmap_5/chn12> ,
+		<channelmap_5/chn13> ,
+		<channelmap_5/chn14> ,
+		<channelmap_5/chn15> ,
+		<channelmap_5/chn16> ,
+		<channelmap_5/chn2> ,
+		<channelmap_5/chn3> ,
+		<channelmap_5/chn4> ,
+		<channelmap_5/chn5> ,
+		<channelmap_5/chn6> ,
+		<channelmap_5/chn7> ,
+		<channelmap_5/chn8> ,
+		<channelmap_5/chn9> ,
+		<channelmap_5/latency> ,
+		<channelmap_5/midiin> ,
+		<channelmap_5/midiout> ;
+	lv2:prototype <http://gareus.org/oss/lv2/midifilter#channelmap> ;
+	a ingen:Block .
+
+<channelmap_5/chn1>
+	ingen:value 1.0 ;
+	lv2:index 3 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_5/chn10>
+	ingen:value 1.0 ;
+	lv2:index 12 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_5/chn11>
+	ingen:value 1.0 ;
+	lv2:index 13 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_5/chn12>
+	ingen:value 1.0 ;
+	lv2:index 14 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_5/chn13>
+	ingen:value 1.0 ;
+	lv2:index 15 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_5/chn14>
+	ingen:value 1.0 ;
+	lv2:index 16 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_5/chn15>
+	ingen:value 1.0 ;
+	lv2:index 17 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_5/chn16>
+	ingen:value 1.0 ;
+	lv2:index 18 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_5/chn2>
+	ingen:value 1.0 ;
+	lv2:index 4 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_5/chn3>
+	ingen:value 1.0 ;
+	lv2:index 5 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_5/chn4>
+	ingen:value 1.0 ;
+	lv2:index 6 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_5/chn5>
+	ingen:value 1.0 ;
+	lv2:index 7 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_5/chn6>
+	ingen:value 1.0 ;
+	lv2:index 8 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_5/chn7>
+	ingen:value 1.0 ;
+	lv2:index 9 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_5/chn8>
+	ingen:value 1.0 ;
+	lv2:index 10 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_5/chn9>
+	ingen:value 1.0 ;
+	lv2:index 11 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<channelmap_5/latency>
+	lv2:index 2 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#notOnGUI> ,
+		lv2:integer ,
+		lv2:reportsLatency ;
+	a lv2:ControlPort ,
+		lv2:OutputPort .
+
+<channelmap_5/midiin>
+	atom:bufferType atom:Sequence ;
+	atom:supports midi:MidiEvent ;
+	lv2:index 0 ;
+	a atom:AtomPort ,
+		lv2:InputPort .
+
+<channelmap_5/midiout>
+	atom:bufferType atom:Sequence ;
+	atom:supports midi:MidiEvent ;
+	lv2:index 1 ;
+	a atom:AtomPort ,
+		lv2:OutputPort .
+
+<control>
+	ingen:canvasX 1544.29138184 ;
+	ingen:canvasY 1096.01367188 ;
+	atom:bufferType atom:Sequence ;
+	atom:supports patch:Message ;
+	<http://lv2plug.in/ns/ext/resize-port#minimumSize> 4096 ;
+	lv2:designation lv2:control ;
+	lv2:index 0 ;
+	lv2:name "Control" ;
+	lv2:portProperty lv2:connectionOptional ;
+	lv2:symbol "control" ;
+	a atom:AtomPort ,
+		lv2:InputPort .
+
+<eventblocker>
+	ingen:canvasX 919.52752686 ;
+	ingen:canvasY 416.6022644 ;
+	lv2:port <eventblocker/blkcc> ,
+		<eventblocker/blkcm> ,
+		<eventblocker/blkcp> ,
+		<eventblocker/blknote> ,
+		<eventblocker/blkpb> ,
+		<eventblocker/blkpc> ,
+		<eventblocker/blkpp> ,
+		<eventblocker/blksx> ,
+		<eventblocker/cm1> ,
+		<eventblocker/cm2> ,
+		<eventblocker/cmf> ,
+		<eventblocker/cmt> ,
+		<eventblocker/latency> ,
+		<eventblocker/midiin> ,
+		<eventblocker/midiout> ;
+	lv2:prototype <http://gareus.org/oss/lv2/midifilter#eventblocker> ;
+	a ingen:Block .
+
+<eventblocker/blkcc>
+	ingen:value 0.0 ;
+	lv2:index 3 ;
+	lv2:portProperty lv2:integer ,
+		lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<eventblocker/blkcm>
+	ingen:value 1.0 ;
+	lv2:index 10 ;
+	lv2:portProperty lv2:integer ,
+		lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<eventblocker/blkcp>
+	ingen:value 1.0 ;
+	lv2:index 7 ;
+	lv2:portProperty lv2:integer ,
+		lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<eventblocker/blknote>
+	ingen:value 1.0 ;
+	lv2:index 4 ;
+	lv2:portProperty lv2:integer ,
+		lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<eventblocker/blkpb>
+	ingen:value 1.0 ;
+	lv2:index 8 ;
+	lv2:portProperty lv2:integer ,
+		lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<eventblocker/blkpc>
+	ingen:value 1.0 ;
+	lv2:index 5 ;
+	lv2:portProperty lv2:integer ,
+		lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<eventblocker/blkpp>
+	ingen:value 1.0 ;
+	lv2:index 6 ;
+	lv2:portProperty lv2:integer ,
+		lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<eventblocker/blksx>
+	ingen:value 1.0 ;
+	lv2:index 9 ;
+	lv2:portProperty lv2:integer ,
+		lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<eventblocker/cm1>
+	ingen:value -1.0 ;
+	lv2:index 13 ;
+	lv2:portProperty lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<eventblocker/cm2>
+	ingen:value -1.0 ;
+	lv2:index 14 ;
+	lv2:portProperty lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<eventblocker/cmf>
+	ingen:value 0.0 ;
+	lv2:index 12 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<eventblocker/cmt>
+	ingen:value 0.0 ;
+	lv2:index 11 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<eventblocker/latency>
+	lv2:index 2 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#notOnGUI> ,
+		lv2:integer ,
+		lv2:reportsLatency ;
+	a lv2:ControlPort ,
+		lv2:OutputPort .
+
+<eventblocker/midiin>
+	atom:bufferType atom:Sequence ;
+	atom:supports midi:MidiEvent ;
+	lv2:index 0 ;
+	a atom:AtomPort ,
+		lv2:InputPort .
+
+<eventblocker/midiout>
+	atom:bufferType atom:Sequence ;
+	atom:supports midi:MidiEvent ;
+	lv2:index 1 ;
+	a atom:AtomPort ,
+		lv2:OutputPort .
+
+<eventblocker_2>
+	ingen:canvasX 905.99645996 ;
+	ingen:canvasY 1123.93774414 ;
+	lv2:port <eventblocker_2/blkcc> ,
+		<eventblocker_2/blkcm> ,
+		<eventblocker_2/blkcp> ,
+		<eventblocker_2/blknote> ,
+		<eventblocker_2/blkpb> ,
+		<eventblocker_2/blkpc> ,
+		<eventblocker_2/blkpp> ,
+		<eventblocker_2/blksx> ,
+		<eventblocker_2/cm1> ,
+		<eventblocker_2/cm2> ,
+		<eventblocker_2/cmf> ,
+		<eventblocker_2/cmt> ,
+		<eventblocker_2/latency> ,
+		<eventblocker_2/midiin> ,
+		<eventblocker_2/midiout> ;
+	lv2:prototype <http://gareus.org/oss/lv2/midifilter#eventblocker> ;
+	a ingen:Block .
+
+<eventblocker_2/blkcc>
+	ingen:value 1.0 ;
+	lv2:index 3 ;
+	lv2:portProperty lv2:integer ,
+		lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<eventblocker_2/blkcm>
+	ingen:value 1.0 ;
+	lv2:index 10 ;
+	lv2:portProperty lv2:integer ,
+		lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<eventblocker_2/blkcp>
+	ingen:value 1.0 ;
+	lv2:index 7 ;
+	lv2:portProperty lv2:integer ,
+		lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<eventblocker_2/blknote>
+	ingen:value 1.0 ;
+	lv2:index 4 ;
+	lv2:portProperty lv2:integer ,
+		lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<eventblocker_2/blkpb>
+	ingen:value 0.0 ;
+	lv2:index 8 ;
+	lv2:portProperty lv2:integer ,
+		lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<eventblocker_2/blkpc>
+	ingen:value 1.0 ;
+	lv2:index 5 ;
+	lv2:portProperty lv2:integer ,
+		lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<eventblocker_2/blkpp>
+	ingen:value 1.0 ;
+	lv2:index 6 ;
+	lv2:portProperty lv2:integer ,
+		lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<eventblocker_2/blksx>
+	ingen:value 1.0 ;
+	lv2:index 9 ;
+	lv2:portProperty lv2:integer ,
+		lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<eventblocker_2/cm1>
+	ingen:value -1.0 ;
+	lv2:index 13 ;
+	lv2:portProperty lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<eventblocker_2/cm2>
+	ingen:value -1.0 ;
+	lv2:index 14 ;
+	lv2:portProperty lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<eventblocker_2/cmf>
+	ingen:value 0.0 ;
+	lv2:index 12 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<eventblocker_2/cmt>
+	ingen:value 0.0 ;
+	lv2:index 11 ;
+	lv2:portProperty lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<eventblocker_2/latency>
+	lv2:index 2 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#notOnGUI> ,
+		lv2:integer ,
+		lv2:reportsLatency ;
+	a lv2:ControlPort ,
+		lv2:OutputPort .
+
+<eventblocker_2/midiin>
+	atom:bufferType atom:Sequence ;
+	atom:supports midi:MidiEvent ;
+	lv2:index 0 ;
+	a atom:AtomPort ,
+		lv2:InputPort .
+
+<eventblocker_2/midiout>
+	atom:bufferType atom:Sequence ;
+	atom:supports midi:MidiEvent ;
+	lv2:index 1 ;
+	a atom:AtomPort ,
+		lv2:OutputPort .
+
+<knob_1>
+	ingen:canvasX 444.85617065 ;
+	ingen:canvasY 520.28271484 ;
+	ingen:value 0.0 ;
+	lv2:index 4 ;
+	lv2:maximum 1.0 ;
+	lv2:minimum 0.0 ;
+	lv2:name "knob 1" ;
+	lv2:symbol "knob_1" ;
+	a lv2:CVPort ,
+		lv2:InputPort .
+
+<knob_2>
+	ingen:canvasX 425.41360474 ;
+	ingen:canvasY 1112.07763672 ;
+	ingen:value 0.0 ;
+	lv2:index 5 ;
+	lv2:maximum 1.0 ;
+	lv2:minimum 0.0 ;
+	lv2:name "knob 2" ;
+	lv2:symbol "knob_2" ;
+	a lv2:CVPort ,
+		lv2:InputPort .
+
+<>
+	ingen:arc [
+		ingen:head <channelmap_2/midiin> ;
+		ingen:tail <casio>
+	] , [
+		ingen:head <channelmap/midiin> ;
+		ingen:tail <um_one>
+	] , [
+		ingen:head <eventblocker_2/midiin> ;
+		ingen:tail <channelmap_2/midiout>
+	] , [
+		ingen:head <passthru/midiin> ;
+		ingen:tail <channelmap_2/midiout>
+	] , [
+		ingen:head <channelmap_4/midiin> ;
+		ingen:tail <eventblocker/midiout>
+	] , [
+		ingen:head <channelmap_5/midiin> ;
+		ingen:tail <eventblocker_2/midiout>
+	] , [
+		ingen:head <Fluidsynth/midi_in> ;
+		ingen:tail <passthru/midiout>
+	] , [
+		ingen:head <channelmap/chn1> ;
+		ingen:tail <knob_1>
+	] , [
+		ingen:head <channelmap_2/chn1> ;
+		ingen:tail <knob_2>
+	] , [
+		ingen:head <R> ;
+		ingen:tail <Fluidsynth/out_r>
+	] , [
+		ingen:head <L> ;
+		ingen:tail <Fluidsynth/out_l>
+	] , [
+		ingen:head <eventblocker/midiin> ;
+		ingen:tail <channelmap/midiout>
+	] , [
+		ingen:head <passthru/midiin> ;
+		ingen:tail <channelmap/midiout>
+	] , [
+		ingen:head <channelmap/midiin> ;
+		ingen:tail <channelmap_5/midiout>
+	] , [
+		ingen:head <channelmap_2/midiin> ;
+		ingen:tail <channelmap_4/midiout>
+	] ;
+	ingen:block <Fluidsynth> ,
+		<channelmap> ,
+		<channelmap_2> ,
+		<channelmap_4> ,
+		<channelmap_5> ,
+		<eventblocker> ,
+		<eventblocker_2> ,
+		<passthru> ;
+	ingen:polyphony 1 ;
+	<http://lv2plug.in/ns/extensions/ui#ui> ingen:GraphUIGtk2 ;
+	lv2:extensionData <http://lv2plug.in/ns/ext/state#interface> ;
+	lv2:port <L> ,
+		<R> ,
+		<casio> ,
+		<control> ,
+		<knob_1> ,
+		<knob_2> ,
+		<notify> ,
+		<um_one> ;
+	doap:name "it1" ;
+	a ingen:Graph ,
+		lv2:Plugin .
+
+<notify>
+	ingen:canvasX 1640.29138184 ;
+	ingen:canvasY 1096.01367188 ;
+	atom:bufferType atom:Sequence ;
+	atom:supports midi:MidiEvent ,
+		patch:Message ;
+	<http://lv2plug.in/ns/ext/resize-port#minimumSize> 4096 ;
+	lv2:designation lv2:control ;
+	lv2:index 1 ;
+	lv2:name "Notify" ;
+	lv2:portProperty lv2:connectionOptional ;
+	lv2:symbol "notify" ;
+	a atom:AtomPort ,
+		lv2:OutputPort .
+
+<passthru>
+	ingen:canvasX 1585.05639648 ;
+	ingen:canvasY 779.21826172 ;
+	lv2:port <passthru/latency> ,
+		<passthru/midiin> ,
+		<passthru/midiout> ;
+	lv2:prototype <http://gareus.org/oss/lv2/midifilter#passthru> ;
+	a ingen:Block .
+
+<passthru/latency>
+	lv2:index 2 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#notOnGUI> ,
+		lv2:integer ,
+		lv2:reportsLatency ;
+	a lv2:ControlPort ,
+		lv2:OutputPort .
+
+<passthru/midiin>
+	atom:bufferType atom:Sequence ;
+	atom:supports midi:MidiEvent ;
+	lv2:index 0 ;
+	a atom:AtomPort ,
+		lv2:InputPort .
+
+<passthru/midiout>
+	atom:bufferType atom:Sequence ;
+	atom:supports midi:MidiEvent ;
+	lv2:index 1 ;
+	a atom:AtomPort ,
+		lv2:OutputPort .
+
+<um_one>
+	ingen:canvasX 511.08868408 ;
+	ingen:canvasY 449.81161499 ;
+	atom:bufferType atom:Sequence ;
+	atom:supports midi:MidiEvent ;
+	lv2:index 3 ;
+	lv2:name "um one" ;
+	lv2:symbol "um_one" ;
+	a atom:AtomPort ,
+		lv2:InputPort .
