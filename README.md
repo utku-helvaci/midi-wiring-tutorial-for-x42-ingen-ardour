@@ -14,17 +14,19 @@
 
 *SVG's are created with Ingen and later edited with Inkscape
 
+*[ACE MIDI Monitor](https://github.com/Ardour/ardour/blob/master/share/scripts/midimon.lua) is a lua plugin integral to ardour, checkout [thepiz midiMonitor](https://web.archive.org/web/20180513135004/https://www.thepiz.org/plugins/?p=midiMonitor) for other daw platforms
+
 ##### Software Used:
 
 - [Ingen](https://drobilla.net/software/ingen.html)
 - [x42](https://x42-plugins.com/x42/midi)
 - [Ardour](https://ardour.org/)
 - [Inkscape](https://inkscape.org/)
-- [MDA-lv2](https://drobilla.net/software/mda-lv2.html) _Linux only, checkout MDA-vst for other platforms_
+- [MDA-lv2](https://drobilla.net/software/mda-lv2.html) _LV2 might not be available for your daw, checkout MDA-vst for other daw platforms_
 
 ##### Recommended To Checkout:
 
-- [thepiz midiCurve](https://web.archive.org/web/20180513135004/http://www.thepiz.org/plugins/?p=midiCurve)
+- [thepiz midiMonitor](https://web.archive.org/web/20180513135004/https://www.thepiz.org/plugins/?p=midiMonitor)
 - [MDA-vst](https://web.archive.org/web/20200204234446/http://mda.smartelectronix.com/)
 
 [Video Tutorial](https://youtu.be/XLbxgM_VACs)
